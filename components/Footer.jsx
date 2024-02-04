@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className='w-full h-60 bg-red-900 text-white text-2xl flex flex-row justify-between items-center'>
+    <footer className='w-full h-60 red-color text-white text-2xl flex flex-row justify-between items-center'>
       <p className="tracking-wider w-96 ml-20">© Dubai Sport Cars 2024</p>
       <div className='flex flex-col h-[138px] w-96 justify-evenly'>
         <p>Contacts:</p>
