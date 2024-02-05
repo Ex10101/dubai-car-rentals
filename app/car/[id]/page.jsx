@@ -33,7 +33,7 @@ function CarPage({params}) {
                 </div>
                 <div className='red-color w-full h-[23px] mt-2'>
                 </div>
-                <img className='object-cover w-[1000px] h-[500px] absolute top-20 right-8' src="/rs6.png" alt="" />
+                <img className='object-cover w-[1100px] h-[500px] absolute top-20 right-8' src="/rs6.png" alt="" />
             </div>
 
             <button className='text-black button-animate-white w-80 h-24 text-2xl ml-52 mt-20 mb-40'>Book the car</button>
@@ -41,12 +41,12 @@ function CarPage({params}) {
             
             <div className='font-nunito w-full h-[500px] flex flex-row justify-between items-center tracking-[4px]'>
                 <div className='flex flex-col ml-52'>
-                    <label className='text-[40px] mb-2 font-bold'>Write your e-mail:</label>
+                    <label className='text-[30px] mb-2 font-bold'>Write your e-mail:</label>
                     <input className='bg-white border-[3px] border-black border w-[550px] h-[70px] text-2xl pl-4' type="text" />
                 </div>
                 <div className='flex flex-col items-center mr-52'>
-                    <p className='font-nunito font-bold text-[45px] mb-5'>Total: 1050 AED</p>
-                    <button className='button-animate text-white text-3xl w-64 h-20'>Pay by card</button>
+                    <p className='font-nunito font-bold text-[30px] mb-5'>Total: 1050 AED</p>
+                    <button className='button-animate text-white text-2xl w-64 h-16'>Pay by card</button>
                 </div>
             </div>
         </div>

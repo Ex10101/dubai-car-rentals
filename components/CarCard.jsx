@@ -38,7 +38,7 @@ function CarCard({ car }) {
                 <img className="inline mb-1 mr-1" src="/price-icon.png" alt="" />
                 {car.price} AED / DAY
             </p>
-            <Image className="mt-[40px]" width={460} height={200} src={car.imageLink} alt="RS6 Image"></Image>
+            <Image className="mt-[40px] object-fill" width={450} height={200} src={car.imageLink} alt="RS6 Image"></Image>
             <div className="mt-[55px] w-[415px] flex flex-row justify-between pb-3 border-b-2 border-black">
                 <h3 className="font-raleway font-bold text-3xl">{car.name}</h3>
                 <button 
