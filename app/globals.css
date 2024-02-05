@@ -48,6 +48,40 @@ h1 {
   z-index: 1;
 }
 
+
+.button-animate-white {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  z-index: 1;
+}
+.button-animate-white:hover {
+  color: white;
+}
+
+.button-animate-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  transition: width 0.3s;
+  z-index: -1;
+}
+
+.button-animate-white:hover::before {
+  width: 100%;
+}
+
+.button-animate-white span {
+  position: relative;
+  z-index: 1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

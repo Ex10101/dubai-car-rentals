@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import getSession from '@/utils/getSession'
 
 function CarCard({ car }) {
 
     const router = useRouter()
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    useEffect(() => {
+        const checkSession = async () => {
+            const session = await getSession();
+            setIsLoggedIn(!!session);
+        };
+
+        checkSession();
+    }, []);
+    
     const handleDelete = async(car) => {
         console.log("handle delete called")
         const hasConfirmed = confirm("Are you sure you want to delete this car?");
@@ -22,7 +33,7 @@ function CarCard({ car }) {
     }
 
     return (
-        <div className="flex flex-col items-center w-[525px] h-[590px] border-4 border-stone-400 border-3 bg-stone-200">
+        <div className="flex flex-col items-center w-[525px] h-fit border-4 border-stone-400 border-3 bg-stone-200">
             <p className="font-nunito font-extrabold text-2xl mt-9">
                 <img className="inline mb-1 mr-1" src="/price-icon.png" alt="" />
                 {car.price} AED / DAY
@@ -36,18 +47,6 @@ function CarCard({ car }) {
                     }}
                     className="button-animate w-[170px] h-[35px] text-white rounded-md"
                 > Book Now </button>
-                <button
-                    onClick={() => {
-                        router.push(`/edit-car?id=${car._id}`);
-                    }}
-                >
-                    Edit Car
-                </button>
-                <button onClick={() => {
-                    handleDelete(car)
-                }}>
-                    Delete Car
-                </button>
             </div>
             <div className="text-xl w-[415px] mt-[25px]">
                 <p className="mb-[2px]">
@@ -62,10 +61,30 @@ function CarCard({ car }) {
                     <img className="inline mr-[10px] pb-[5px]" width="25" height="25" src="/seat-icon.png" alt="seats icon" />
                     <span className="font-bold">Seats:</span> {car.seats}
                 </p>
-                <p className="mb-[2px]">
+                <p className="mb-[2px] mb-2">
                     <img className="inline mr-[10px] pb-[5px]" width="25" height="25" src="/avaliable-icon.png" alt="seats icon" />
                     <span className="text-green-700 font-bold">{car.avaliability ? `Avaliable` : `Unavaliable`}</span>
                 </p>
+                {isLoggedIn == true ? (
+                    <div className='flex flex-row justify-center mb-3'>
+                        <button className='button-animate w-[170px] h-[35px] text-white rounded-md mx-5'
+                            onClick={() => {
+                                router.push(`/edit-car?id=${car._id}`);
+                            }}
+                        >
+                            Edit Car
+                        </button>
+                        <button  className='button-animate w-[170px] h-[35px] text-white rounded-md'
+                            onClick={() => {
+                                handleDelete(car)
+                            }}
+                        >
+                            Delete Car
+                        </button>
+                    </div>
+                ) : (
+                    <div></div>
+                )}
             </div>
         </div>
     )

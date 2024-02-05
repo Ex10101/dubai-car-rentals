@@ -15,6 +15,12 @@ const Form = ({ type, car, setCar, submitting, handleSubmit }) => {
             />
             <input 
                 type="text" 
+                value={car.desc} 
+                onChange={(e) => setCar({...car, desc: e.target.value})}
+                placeholder="desc"
+            />
+            <input 
+                type="text" 
                 value={car.name} 
                 onChange={(e) => setCar({...car, name: e.target.value})}
             />

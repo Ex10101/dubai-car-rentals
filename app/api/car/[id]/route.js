@@ -16,7 +16,7 @@ export const GET = async (request, { params }) => {
 }
 
 export const PATCH = async (request, { params }) => {
-    const { price, imageLink, name, torque, maxSpeed, seats, avaliability } = await request.json();
+    const { price, imageLink, desc, name, torque, maxSpeed, seats, avaliability } = await request.json();
 
     try {
         await connectToDB();
@@ -31,6 +31,7 @@ export const PATCH = async (request, { params }) => {
         // Update the car with new data
         existingCar.price = price;
         existingCar.imageLink = imageLink;
+        existingCar.desc = desc;
         existingCar.name = name;
         existingCar.torque = torque;
         existingCar.maxSpeed = maxSpeed;

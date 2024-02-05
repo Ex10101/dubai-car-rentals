@@ -9,8 +9,9 @@ function CreateCar() {
 
     const [submitting, setIsSubmitting] = useState(false);
     const [car, setCar] = useState({ 
-        price: 0, 
+        price: 0,
         imageLink: "", 
+        desc: "", 
         name: "", 
         torque: 0, 
         maxSpeed: 0, 
@@ -27,7 +28,8 @@ function CreateCar() {
                 method: "POST",
                 body: JSON.stringify({
                     price: car.price, 
-                    imageLink: car.imageLink, 
+                    imageLink: car.imageLink,
+                    desc: car.desc, 
                     name: car.name, 
                     torque: car.torque, 
                     maxSpeed: car.maxSpeed, 
