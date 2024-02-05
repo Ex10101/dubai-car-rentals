@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div>
       <div className="mt-20 flex flex-row justify-between">
-        <Image src={"/hero-image.png"} width={1120} height={564} alt="jaguar image"></Image>
+        <img src={"/hero-image.png"} width="1120" height="564" alt="jaguar image" />
         <section className="flex flex-col justify-between w-[637px] mr-[50px] h-[380px]">
           <h2 className="text-6xl font-russo tracking-widest">One of the biggest sportcar rentals in Dubai</h2>
           <p className="text-3xl font-russo text-stone-500">We will make every ride of yours - <span className="red-text">unforgetable</span></p>

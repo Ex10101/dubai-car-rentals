@@ -33,12 +33,12 @@ function CarCard({ car }) {
     }
 
     return (
-        <div className="flex flex-col items-center w-[525px] h-fit border-4 border-stone-400 border-3 bg-stone-200">
+        <div className="flex flex-col items-center mx-12 w-[525px] h-fit border-4 border-stone-400 border-3 bg-stone-200">
             <p className="font-nunito font-extrabold text-2xl mt-9">
                 <img className="inline mb-1 mr-1" src="/price-icon.png" alt="" />
                 {car.price} AED / DAY
             </p>
-            <Image className="mt-[40px] object-fill" width={450} height={200} src={car.imageLink} alt="RS6 Image"></Image>
+            <img className="mt-[40px] object-cover w-[450px] h-[250px]" src={car.imageLink} alt="RS6 Image"/>
             <div className="mt-[55px] w-[415px] flex flex-row justify-between pb-3 border-b-2 border-black">
                 <h3 className="font-raleway font-bold text-3xl">{car.name}</h3>
                 <button 
